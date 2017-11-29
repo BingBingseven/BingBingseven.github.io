@@ -21,12 +21,12 @@
 <meta property="og:url" content="http://yoursite.com/2017/11/29/关于JS的作用域及作用域链的理解/index.html">
 <meta property="og:site_name" content="Bing&#39;s WEB BLOG">
 <meta property="og:description" content="关于JS的作用域及作用域链的理解1、什么是作用域&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;所谓作用域，其实就是指js函数的执行环境，在javascript中没有块级作用域，取而代之的是函数作用域（function scope）。一般函数外的执行环境称为全局作用域，函数内称为局部作用域。当然这涉及到全局变量和局部变量的问题。 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;1.1全局作用域&amp;n">
-<meta property="og:image" content="c:/Users/yg/lbjBlog/source/img/scopechain.png">
+<meta property="og:image" content="http://yoursite.com/2017/11/29/关于JS的作用域及作用域链的理解/Users/yg/lbjBlog/source/img/scopechain.png">
 <meta property="og:updated_time" content="2017-11-29T06:43:12.069Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Bing&#39;s WEB BLOG">
 <meta name="twitter:description" content="关于JS的作用域及作用域链的理解1、什么是作用域&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;所谓作用域，其实就是指js函数的执行环境，在javascript中没有块级作用域，取而代之的是函数作用域（function scope）。一般函数外的执行环境称为全局作用域，函数内称为局部作用域。当然这涉及到全局变量和局部变量的问题。 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;1.1全局作用域&amp;n">
-<meta name="twitter:image" content="c:/Users/yg/lbjBlog/source/img/scopechain.png">
+<meta name="twitter:image" content="http://yoursite.com/2017/11/29/关于JS的作用域及作用域链的理解/Users/yg/lbjBlog/source/img/scopechain.png">
   
   
     <link rel="icon" href="/css/images/favicon.ico">
@@ -73,7 +73,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://yoursite.com/2017/11/29/关于JS的作用域及作用域链的理解/" data-id="cjakpiqqz00009ccpardijkd0" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://yoursite.com/2017/11/29/关于JS的作用域及作用域链的理解/" data-id="cjakq43th0000qccpkhemrpgg" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -86,7 +86,7 @@
 <h4 id="nbsp-nbsp-nbsp-nbsp-（3）一般情况下，window内置对象的属性拥有全局变量，例如window-name、window-location、window-top等等。"><a href="#nbsp-nbsp-nbsp-nbsp-（3）一般情况下，window内置对象的属性拥有全局变量，例如window-name、window-location、window-top等等。" class="headerlink" title="&nbsp;&nbsp;&nbsp;&nbsp;（3）一般情况下，window内置对象的属性拥有全局变量，例如window.name、window.location、window.top等等。"></a>&nbsp;&nbsp;&nbsp;&nbsp;（3）一般情况下，window内置对象的属性拥有全局变量，例如window.name、window.location、window.top等等。</h4><h3 id="nbsp-nbsp-nbsp-nbsp-1-2局部作用域"><a href="#nbsp-nbsp-nbsp-nbsp-1-2局部作用域" class="headerlink" title="&nbsp;&nbsp;&nbsp;&nbsp;1.2局部作用域"></a>&nbsp;&nbsp;&nbsp;&nbsp;1.2局部作用域</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;与全局作用域相反，一般情况下，函数体内用var声明的变量以及函数的参数都为局部变量，它们拥有局部作用域，也就是相对于函数外的执行环境，局部变量是不可见的。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var scope=&quot;global&quot;;  </span><br><span class="line">function findscope()&#123;</span><br><span class="line">    var scope=&quot;local&quot;;  //这里scope为局部变量</span><br><span class="line">    console.log(scope);</span><br><span class="line">&#125;</span><br><span class="line">findscope();           //输出结果为&quot;local&quot;</span><br><span class="line">console.log(scope);    //输出结果为&quot;global&quot;，无法访问局部变量scope的值</span><br></pre></td></tr></table></figure></p>
 <h2 id="2、什么是作用域链"><a href="#2、什么是作用域链" class="headerlink" title="2、什么是作用域链"></a>2、什么是作用域链</h2><p>&nbsp;&nbsp;&nbsp;&nbsp;函数可以嵌套多层，当js需要查找一个变量的值时，它会从它所处的执行环境中开始查找，如果找到了则直接使用这个属性值，如何没有，它会继续向外层执行环境遍历查找，直到找到该变量的值。这个过程其实就是一个对象列表或者说是链表，也就是我们说的作用域链（scope chain）。如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">var a = 20;</span><br><span class="line"></span><br><span class="line">function outer() &#123;</span><br><span class="line">    var b = a + 10;</span><br><span class="line"></span><br><span class="line">    function inner() &#123;</span><br><span class="line">        var c = 10;</span><br><span class="line">        return b + c;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    return inner();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">outer();    //输出结果为40</span><br></pre></td></tr></table></figure>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;以上一段代码的函数嵌套关系比较简单，下图为对这段代码作用域链的一个说明：<br><img src="C:\Users\yg\lbjBlog\source\img\scopechain.png" alt="image"></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;以上一段代码的函数嵌套关系比较简单，下图为对这段代码作用域链的一个说明：<br><img src="/2017/11/29/关于JS的作用域及作用域链的理解/Users\yg\lbjBlog\source\img\scopechain.png" alt="image"></p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;当我们调用一个函数时，js会将该函数压入一个执行环境栈中，调用结束后自动释放，但如果该函数内的变量作为内层嵌套函数的全局变量时，因为它需要被遍历引用，所以一直不能释放，也就会形成闭包（与inner不同，图中的outer函数因为变量b被inner函数所引用，所以始终不能释放）</p>
 
       
