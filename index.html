@@ -60,14 +60,14 @@
       <div id="main" class="wrapper">
         <div id="primary" class="site-content"><div id="content" role="main">
   
-    <article id="post-mocha" class="post-mocha post type-post status-publish format-standard hentry">
+    <article id="post-初探mocha单元测试" class="post-初探mocha单元测试 post type-post status-publish format-standard hentry">
     <!---->
 
       <header class="entry-header">
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://yoursite.com/2017/12/12/mocha/" data-id="cjb30u80n00019cf6l6eg79mk" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://yoursite.com/2017/12/12/初探mocha单元测试/" data-id="cjb316jfz000180f6utvv3lz9" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -81,16 +81,16 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//demo.test.js</span><br><span class="line">var compare=require(&quot;./demo.js&quot;);</span><br><span class="line">var expect=require(&quot;chai&quot;).expect;</span><br><span class="line">describe(&quot;比较函数的测试&quot;,function()&#123;</span><br><span class="line">    it(&quot;2和1应输出2&quot;,function()&#123;</span><br><span class="line">        expect(compare(2,1)).to.be.equal(2);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;进入包含这两个文件的文件夹，可以用Git  bush输入命令行 $ mocha demo.test.js</p>
 <h1 id="Mocha运行于浏览器"><a href="#Mocha运行于浏览器" class="headerlink" title="Mocha运行于浏览器"></a>Mocha运行于浏览器</h1><p>&nbsp;&nbsp;&nbsp;&nbsp;如果我们希望在浏览器中运行测试脚本，那么我们可以直接输入命令行$ mocha init folder_name;</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;其中folder_name为你即将新建的一个文件夹的名称，完成这个步骤之后，该文件夹内会自动生成几个文件：<br><img src="http://a1.qpic.cn/psb?/15dc0c5e-bb15-46ea-8a83-d139f878fe84/moK79lrlcy4bq6SqV1AhQmafoHK7ZAwcyJ4wWVppwMc!/b/dPMAAAAAAAAA&amp;bo=fAIQAQAAAAADAEo!&amp;rf=viewer_4" alt="image"><br>我们在文件夹内创建需要被测试的js文件，这个时候与运行在nodejs上不同，不需要用exports导出单元，同时，我们需要在tests,js里书写相对应的测试脚本，这里的写法也不太一样：</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;其中folder_name为你即将新建的一个文件夹的名称，完成这个步骤之后，该文件夹内会自动生成几个文件：<br><img src="http://m.qpic.cn/psb?/V13xWzUn2z4NWI/BkqG*WgguCfPOpLpcS68Q8JeTF9tiT4J7H5XW0YCfTQ!/b/dKgAAAAAAAAA&amp;bo=fAIQAQAAAAADB00!&amp;rf=viewer_4" alt="image"><br>我们在文件夹内创建需要被测试的js文件，这个时候与运行在nodejs上不同，不需要用exports导出单元，同时，我们需要在tests,js里书写相对应的测试脚本，这里的写法也不太一样：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//  var compare=require(&quot;./demo.js&quot;);这行代码不需要</span><br><span class="line">var expect=chai.expect;   </span><br><span class="line">// 这里也不再是var expect=require(&quot;chai&quot;).expect;</span><br><span class="line">describe(&quot;比较函数的测试&quot;,function()&#123;</span><br><span class="line">    it(&quot;2和1应输出2&quot;,function()&#123;</span><br><span class="line">        expect(compare(2,1)).to.be.equal(2);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;然后我们需要打开index.html，引入chai.js以及需被测试的js脚本，完成后，直接运行index.js就能看到浏览器上的效果了。如下图所示：<br><img src="/2017/12/12/mocha/Users\yg\Desktop\brower.png" alt="image"></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;然后我们需要打开index.html，引入chai.js以及需被测试的js脚本，完成后，直接运行index.js就能看到浏览器上的效果了。如下图所示：<br><img src="http://a2.qpic.cn/psb?/V13xWzUn2z4NWI/d33FhUhuDHexEvRMSjbV*X4WhG*q4vdjF8jvYB3gCJs!/b/dBIBAAAAAAAA&amp;bo=WgUVAQAAAAADAG4!&amp;rf=viewer_4" alt="image"></p>
 <h4 id="nbsp-nbsp-nbsp-nbsp-需要说明的是，由于mocha是异步执行的，所以即使第一个测试没通过，不会影响接下来的测试。另外，如果使用了jquery框架，mocha不能识别-所以我们需要在index-js中引入jquery脚本，其他框架应是同样的解决方法。"><a href="#nbsp-nbsp-nbsp-nbsp-需要说明的是，由于mocha是异步执行的，所以即使第一个测试没通过，不会影响接下来的测试。另外，如果使用了jquery框架，mocha不能识别-所以我们需要在index-js中引入jquery脚本，其他框架应是同样的解决方法。" class="headerlink" title="&nbsp;&nbsp;&nbsp;&nbsp;需要说明的是，由于mocha是异步执行的，所以即使第一个测试没通过，不会影响接下来的测试。另外，如果使用了jquery框架，mocha不能识别$,所以我们需要在index.js中引入jquery脚本，其他框架应是同样的解决方法。"></a>&nbsp;&nbsp;&nbsp;&nbsp;需要说明的是，由于mocha是异步执行的，所以即使第一个测试没通过，不会影响接下来的测试。另外，如果使用了jquery框架，mocha不能识别$,所以我们需要在index.js中引入jquery脚本，其他框架应是同样的解决方法。</h4>
       
     </div><!-- .entry-content -->
 
     <footer class="entry-meta">
-    <a href="/2017/12/12/mocha/">
-    <time datetime="2017-12-12T02:41:36.967Z" class="entry-date">
+    <a href="/2017/12/12/初探mocha单元测试/">
+    <time datetime="2017-12-12T02:49:25.442Z" class="entry-date">
         2017-12-12
     </time>
 </a>
@@ -112,7 +112,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://yoursite.com/2017/11/29/关于JS的作用域及作用域链的理解/" data-id="cjb30u80g00009cf6hiy92vz0" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://yoursite.com/2017/11/29/关于JS的作用域及作用域链的理解/" data-id="cjb316jfr000080f65ds6qvu5" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -125,7 +125,7 @@
 <h4 id="nbsp-nbsp-nbsp-nbsp-（3）一般情况下，window内置对象的属性拥有全局变量，例如window-name、window-location、window-top等等。"><a href="#nbsp-nbsp-nbsp-nbsp-（3）一般情况下，window内置对象的属性拥有全局变量，例如window-name、window-location、window-top等等。" class="headerlink" title="&nbsp;&nbsp;&nbsp;&nbsp;（3）一般情况下，window内置对象的属性拥有全局变量，例如window.name、window.location、window.top等等。"></a>&nbsp;&nbsp;&nbsp;&nbsp;（3）一般情况下，window内置对象的属性拥有全局变量，例如window.name、window.location、window.top等等。</h4><h3 id="nbsp-nbsp-nbsp-nbsp-1-2局部作用域"><a href="#nbsp-nbsp-nbsp-nbsp-1-2局部作用域" class="headerlink" title="&nbsp;&nbsp;&nbsp;&nbsp;1.2局部作用域"></a>&nbsp;&nbsp;&nbsp;&nbsp;1.2局部作用域</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;与全局作用域相反，一般情况下，函数体内用var声明的变量以及函数的参数都为局部变量，它们拥有局部作用域，也就是相对于函数外的执行环境，局部变量是不可见的。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var scope=&quot;global&quot;;  </span><br><span class="line">function findscope()&#123;</span><br><span class="line">    var scope=&quot;local&quot;;  //这里scope为局部变量</span><br><span class="line">    console.log(scope);</span><br><span class="line">&#125;</span><br><span class="line">findscope();           //输出结果为&quot;local&quot;</span><br><span class="line">console.log(scope);    //输出结果为&quot;global&quot;，无法访问局部变量scope的值</span><br></pre></td></tr></table></figure></p>
 <h2 id="2、什么是作用域链"><a href="#2、什么是作用域链" class="headerlink" title="2、什么是作用域链"></a>2、什么是作用域链</h2><p>&nbsp;&nbsp;&nbsp;&nbsp;函数可以嵌套多层，当js需要查找一个变量的值时，它会从它所处的执行环境中开始查找，如果找到了则直接使用这个属性值，如何没有，它会继续向外层执行环境遍历查找，直到找到该变量的值。这个过程其实就是一个对象列表或者说是链表，也就是我们说的作用域链（scope chain）。如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">var a = 20;</span><br><span class="line"></span><br><span class="line">function outer() &#123;</span><br><span class="line">    var b = a + 10;</span><br><span class="line"></span><br><span class="line">    function inner() &#123;</span><br><span class="line">        var c = 10;</span><br><span class="line">        return b + c;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    return inner();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">outer();    //输出结果为40</span><br></pre></td></tr></table></figure>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;以上一段代码的函数嵌套关系比较简单，下图为对这段代码作用域链的一个说明：<br><img src="/2017/11/29/关于JS的作用域及作用域链的理解/Users\yg\lbjBlog\source\images\scopechain.jpg" alt="image"></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;以上一段代码的函数嵌套关系比较简单，下图为对这段代码作用域链的一个说明：<br><img src="http://a2.qpic.cn/psb?/V13xWzUn2z4NWI/fwde4DsCSEd7et3oa0WEhEvVZ7w0TzdAbPDvufTFRD0!/b/dB4BAAAAAAAA&amp;bo=YAIhAgAAAAADAGQ!&amp;rf=viewer_4" alt="image"></p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;当我们调用一个函数时，js会将该函数压入一个执行环境栈中，调用结束后自动释放，但如果该函数内的变量作为内层嵌套函数的全局变量时，因为它需要被遍历引用，所以一直不能释放，也就会形成闭包（与inner不同，图中的outer函数因为变量b被inner函数所引用，所以始终不能释放）</p>
 
       
@@ -171,7 +171,7 @@
       <ul>
         
           <li>
-            <a href="/2017/12/12/mocha/">(no title)</a>
+            <a href="/2017/12/12/初探mocha单元测试/">(no title)</a>
           </li>
         
           <li>
