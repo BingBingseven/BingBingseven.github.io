@@ -60,14 +60,14 @@
       <div id="main" class="wrapper">
         <div id="primary" class="site-content"><div id="content" role="main">
   
-    <article id="post-初探mocha单元测试" class="post-初探mocha单元测试 post type-post status-publish format-standard hentry">
+    <article id="post-mocha" class="post-mocha post type-post status-publish format-standard hentry">
     <!---->
 
       <header class="entry-header">
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://yoursite.com/2017/12/11/初探mocha单元测试/" data-id="cjb30qwsu0001q8f6v7folsea" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://yoursite.com/2017/12/12/mocha/" data-id="cjb30u80n00019cf6l6eg79mk" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -81,17 +81,17 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//demo.test.js</span><br><span class="line">var compare=require(&quot;./demo.js&quot;);</span><br><span class="line">var expect=require(&quot;chai&quot;).expect;</span><br><span class="line">describe(&quot;比较函数的测试&quot;,function()&#123;</span><br><span class="line">    it(&quot;2和1应输出2&quot;,function()&#123;</span><br><span class="line">        expect(compare(2,1)).to.be.equal(2);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;进入包含这两个文件的文件夹，可以用Git  bush输入命令行 $ mocha demo.test.js</p>
 <h1 id="Mocha运行于浏览器"><a href="#Mocha运行于浏览器" class="headerlink" title="Mocha运行于浏览器"></a>Mocha运行于浏览器</h1><p>&nbsp;&nbsp;&nbsp;&nbsp;如果我们希望在浏览器中运行测试脚本，那么我们可以直接输入命令行$ mocha init folder_name;</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;其中folder_name为你即将新建的一个文件夹的名称，完成这个步骤之后，该文件夹内会自动生成几个文件：<br><img src="/2017/12/11/初探mocha单元测试/Users\yg\Desktop\folder.png" alt="image"><br>我们在文件夹内创建需要被测试的js文件，这个时候与运行在nodejs上不同，不需要用exports导出单元，同时，我们需要在tests,js里书写相对应的测试脚本，这里的写法也不太一样：</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;其中folder_name为你即将新建的一个文件夹的名称，完成这个步骤之后，该文件夹内会自动生成几个文件：<br><img src="http://a1.qpic.cn/psb?/15dc0c5e-bb15-46ea-8a83-d139f878fe84/moK79lrlcy4bq6SqV1AhQmafoHK7ZAwcyJ4wWVppwMc!/b/dPMAAAAAAAAA&amp;bo=fAIQAQAAAAADAEo!&amp;rf=viewer_4" alt="image"><br>我们在文件夹内创建需要被测试的js文件，这个时候与运行在nodejs上不同，不需要用exports导出单元，同时，我们需要在tests,js里书写相对应的测试脚本，这里的写法也不太一样：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//  var compare=require(&quot;./demo.js&quot;);这行代码不需要</span><br><span class="line">var expect=chai.expect;   </span><br><span class="line">// 这里也不再是var expect=require(&quot;chai&quot;).expect;</span><br><span class="line">describe(&quot;比较函数的测试&quot;,function()&#123;</span><br><span class="line">    it(&quot;2和1应输出2&quot;,function()&#123;</span><br><span class="line">        expect(compare(2,1)).to.be.equal(2);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;然后我们需要打开index.html，引入chai.js以及需被测试的js脚本，完成后，直接运行index.js就能看到浏览器上的效果了。如下图所示：<br><img src="/2017/12/11/初探mocha单元测试/Users\yg\Desktop\brower.png" alt="image"></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;然后我们需要打开index.html，引入chai.js以及需被测试的js脚本，完成后，直接运行index.js就能看到浏览器上的效果了。如下图所示：<br><img src="/2017/12/12/mocha/Users\yg\Desktop\brower.png" alt="image"></p>
 <h4 id="nbsp-nbsp-nbsp-nbsp-需要说明的是，由于mocha是异步执行的，所以即使第一个测试没通过，不会影响接下来的测试。另外，如果使用了jquery框架，mocha不能识别-所以我们需要在index-js中引入jquery脚本，其他框架应是同样的解决方法。"><a href="#nbsp-nbsp-nbsp-nbsp-需要说明的是，由于mocha是异步执行的，所以即使第一个测试没通过，不会影响接下来的测试。另外，如果使用了jquery框架，mocha不能识别-所以我们需要在index-js中引入jquery脚本，其他框架应是同样的解决方法。" class="headerlink" title="&nbsp;&nbsp;&nbsp;&nbsp;需要说明的是，由于mocha是异步执行的，所以即使第一个测试没通过，不会影响接下来的测试。另外，如果使用了jquery框架，mocha不能识别$,所以我们需要在index.js中引入jquery脚本，其他框架应是同样的解决方法。"></a>&nbsp;&nbsp;&nbsp;&nbsp;需要说明的是，由于mocha是异步执行的，所以即使第一个测试没通过，不会影响接下来的测试。另外，如果使用了jquery框架，mocha不能识别$,所以我们需要在index.js中引入jquery脚本，其他框架应是同样的解决方法。</h4>
       
     </div><!-- .entry-content -->
 
     <footer class="entry-meta">
-    <a href="/2017/12/11/初探mocha单元测试/">
-    <time datetime="2017-12-11T09:09:26.229Z" class="entry-date">
-        2017-12-11
+    <a href="/2017/12/12/mocha/">
+    <time datetime="2017-12-12T02:41:36.967Z" class="entry-date">
+        2017-12-12
     </time>
 </a>
     
@@ -112,7 +112,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://yoursite.com/2017/11/29/关于JS的作用域及作用域链的理解/" data-id="cjb30qwsn0000q8f6q6dg4nkk" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://yoursite.com/2017/11/29/关于JS的作用域及作用域链的理解/" data-id="cjb30u80g00009cf6hiy92vz0" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -171,7 +171,7 @@
       <ul>
         
           <li>
-            <a href="/2017/12/11/初探mocha单元测试/">(no title)</a>
+            <a href="/2017/12/12/mocha/">(no title)</a>
           </li>
         
           <li>
