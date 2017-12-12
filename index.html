@@ -67,13 +67,20 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://yoursite.com/2017/12/11/初探mocha单元测试/" data-id="cjb21ku210000v0f6f10209g0" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://yoursite.com/2017/12/11/初探mocha单元测试/" data-id="cjb2y2ukb00009cf67ohbw25t" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
     <div class="entry-content">
       
-        
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;由于公司要求前端使用mocha进行单元测试，尽管从来没用过，但是也硬着头皮学习了一下。其中遇到了一些难题，但也进行了自己的理解完成了整体的学习，以下是个人学习的总结：</p>
+<h1 id="Mocha是什么？"><a href="#Mocha是什么？" class="headerlink" title="Mocha是什么？"></a>Mocha是什么？</h1><p>&nbsp;&nbsp;&nbsp;&nbsp;Mocha诞生于2011年，是现在流行的Javascript测试框架之一，它在浏览器和Node环境中都能使用。所谓单元测试，是对我们代码的最小单元的功能块进行测试，比如数据类型或者方法模块。之所以进行单元测试，目的在于保证我们的代码的准确性。前端开发中的重点是与用户的交互，其中的html和css两种语言暂时无法测试，但是前端开发必用的脚本语言Javascript却可以针对它的数据、对象、方法等进行测试。这个单元过程如果在简单的前端开发中，会觉得存在的必要性不强，但随着项目的扩大，代码量的急剧增加，很多时候会因为变量命名、数据类型等问题产生BUG。所以做单元测试类似于买保险，看起来是增加了没必要的代码量，其实是极为保险的做法，好处不易体会但功能极大，特别是像Javascript这样的弱类型语言。</p>
+<h1 id="Mocha运行于nodejs"><a href="#Mocha运行于nodejs" class="headerlink" title="Mocha运行于nodejs"></a>Mocha运行于nodejs</h1><h3 id="nbsp-nbsp-nbsp-nbsp-这是我省略了mocha的全局安装以及chai-js的初步了解。"><a href="#nbsp-nbsp-nbsp-nbsp-这是我省略了mocha的全局安装以及chai-js的初步了解。" class="headerlink" title="&nbsp;&nbsp;&nbsp;&nbsp;这是我省略了mocha的全局安装以及chai.js的初步了解。"></a>&nbsp;&nbsp;&nbsp;&nbsp;这是我省略了mocha的全局安装以及chai.js的初步了解。</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;如果测试脚本运行于node,我们需要在被测试的js文件里导出单元，如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">//demo.js</span><br><span class="line">function compare(x,y)&#123;</span><br><span class="line">    if(x&gt;y)&#123;</span><br><span class="line">        return x;</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        return y;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">module.exports=compare;</span><br></pre></td></tr></table></figure>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;如果测试这个单元，那对应要写测试脚本，通常，测试脚本与所要测试的源码脚本同名，但是后缀名为.test.js如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//demo.test.js</span><br><span class="line">var compare=require(&quot;./demo.js&quot;);</span><br><span class="line">var expect=require(&quot;chai&quot;).expect;</span><br><span class="line">describe(&quot;比较函数的测试&quot;,function()&#123;</span><br><span class="line">    it(&quot;2和1应输出2&quot;,function()&#123;</span><br><span class="line">        expect(compare(2,1)).to.be.equal(2);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;进入包含这两个文件的文件夹，可以用Git  bush输入命令行 $ mocha demo.test.js</p>
+
       
     </div><!-- .entry-content -->
 
@@ -101,7 +108,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://yoursite.com/2017/11/29/关于JS的作用域及作用域链的理解/" data-id="cjb21ku3v0001v0f6nz3pf9gi" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://yoursite.com/2017/11/29/关于JS的作用域及作用域链的理解/" data-id="cjb2y2ukv00019cf6ovttchu9" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
